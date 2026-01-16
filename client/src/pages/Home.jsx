@@ -1,4 +1,4 @@
-```
+
 import React, { useEffect, useState } from 'react';
 import api from '../api';
 import { useSearchParams, Link } from 'react-router-dom';
@@ -20,7 +20,7 @@ const Home = () => {
             if (searchTerm) params.append('search', searchTerm);
             if (category) params.append('category', category);
 
-            if (params.toString()) url += `? ${ params.toString() } `;
+            if (params.toString()) url += '?' + params.toString();
 
             const response = await api.get(url);
             setProducts(response.data);
